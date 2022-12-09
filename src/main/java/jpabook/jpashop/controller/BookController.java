@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class ItemController {
+public class BookController {
 
     private final BookService bookService;
 
@@ -44,7 +44,7 @@ public class ItemController {
 
     @GetMapping("items/{itemId}/edit")
     public String updateItemForm(@PathVariable("itemId") Long itemId, Model model) {
-        Book item = (Book) bookService.findOne(itemId);
+        Book item = bookService.findOne(itemId);
 
         BookForm form = new BookForm();
         form.setId(item.getId());
